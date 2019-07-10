@@ -11,7 +11,7 @@ LABEL org.label-schema.url="https://nxfilter.org/p3/" \
       org.label-schema.vcs-url=$VCS_URL \
       org.label-schema.vcs-ref=$VCS_REF
 RUN apk -U add openjdk8-jre curl unzip
-RUN curl $(printf ' -O http://www.nxfilter.org/download/nxfilter-4.2.4.zip' $(cat version.txt)) && \
+RUN curl $(printf ' -O http://pub.nxfilter.org/nxfilter-%s.zip' $(cat version.txt)) && \
     cd / && \
     unzip $(printf 'nxfilter-%s.zip' $(cat version.txt)) -d /nxfilter && \
     rm -f $(printf 'nxfilter-%s.zip' $(cat version.txt)) && \
